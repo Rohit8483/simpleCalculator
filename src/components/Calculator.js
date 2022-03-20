@@ -13,7 +13,7 @@ export const Calculator = () => {
   const clear = () => {
     setResult("");
   };
-  
+
   //   backSpace fn
   const backSpace = () => {
     setResult(result.slice(0, -1)); //or result.length-1 === -1
@@ -30,9 +30,10 @@ export const Calculator = () => {
 
   return (
     <div id="container">
-      <div id="res">
-        <input type="text" value={result} />
-      </div>
+      <form id="res">
+        <input type="text" readOnly value={result} />
+      </form>
+
       <div className="keypad">
         <button className="clear" onClick={clear} id="clear">
           clear
