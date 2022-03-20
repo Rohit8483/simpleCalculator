@@ -3,25 +3,29 @@ import "./Calculator.css";
 
 export const Calculator = () => {
   const [result, setResult] = useState("");
-  
+
+  //   taking inputs
   const handleClick = (e) => {
     setResult(result.concat(e.target.name));
   };
 
-  //   fn
+  //   clearing result
   const clear = () => {
     setResult("");
   };
+  
+  //   backSpace fn
   const backSpace = () => {
     setResult(result.slice(0, -1)); //or result.length-1 === -1
   };
+
+  //   evaluation of data
   const calculate = () => {
-      try{
-          setResult(eval(result).toString());
-      }
-      catch(err){
-          setResult("ERROR")
-      }
+    try {
+      setResult(eval(result).toString());
+    } catch (err) {
+      setResult("ERROR");
+    }
   };
 
   return (
